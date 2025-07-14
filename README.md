@@ -28,6 +28,8 @@ sales-inventory-management/
 ├── queries/
 │ ├── 01_basic_queries.sql # Simple queries for understanding the schema
 │ ├── 02_intermediate_queries.sql # Joins, aggregates, subqueries
+├── docs/
+│ └── ERD.png Entity Relationship Diagram of the schema
 └── README.md # Project documentation
 
 ---

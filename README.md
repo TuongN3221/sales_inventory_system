@@ -56,7 +56,7 @@ To run this project on your local machine:
 - Run `schema/02_insert_data.sql` to populate the database with products, customers, suppliers, and transactions.
 6. **Run queries**
 - Choose a SQL file in the `queries/` folder and execute against your database to explore insights.
-- 
+
 ## 🗂️ Technologies Used
 
 - **Database**: MySQL 8.x

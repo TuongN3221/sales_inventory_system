@@ -70,7 +70,7 @@ JOIN
 GROUP BY 
 	Customers.CustomerID;
 
--- 7. Rank customers by their total spending, and show ties.
+-- 6. Rank customers by their total spending, and show ties.
 SELECT 
 	Customers.FirstName, 
 	Customers.LastName, 

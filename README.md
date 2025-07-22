@@ -38,18 +38,31 @@ sales-inventory-management/
 
 ---
 
-## 💡 Sample Business Questions Answered
+## 💡 Business Questions Answered
 
 ### 🔰 Basic
-- What are all the products and their stock levels?
-- Which products are below their reorder level?
-- What is the total revenue from all sales?
+- What are all the products with their category and current stock level
+- Who are the Customers from the West region?
+- What are the Total Number of Sales per Product?
+- What are the products that have been sold?
+- Who are the customers that have purchaed 'MacBook Pro 16"'?
+- How many Customers Per Region?
+- What is the generated revenue across all the products?
 
 ### 🧩 Intermediate
-- Which products have never been sold?
-- How many different products has each customer purchased?
-- What is the total revenue per product category?
-- What is the average quantity sold per transaction for each product?
+- What is the total revenue generated per product category?
+- How many unique products has each customer purchased?
+- Which regions generate the most revenue?
+- What are the top 3 product categories by number of units sold?
+
+### 📈 Advanced
+- Which product category generated the highest total revenue in July 2025?
+- Identify all customers who have purchased more than one distinct product category.
+- For each region, determine the total number of customers and the total sales revenue they generated in July 2025.
+- For each product category, find the average quantity sold per sale.
+- For each customer, show their first purchase date and total number of purchases.
+- Rank customers by their total spending, and show ties.
+  
 
 To run this project on your local machine:
 1. **Clone the repository**

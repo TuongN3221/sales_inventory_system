@@ -22,14 +22,14 @@ The database is designed to answer key business questions using SQL, ranging fro
 sales-inventory-management/
 │
 ├── schema/
-│ ├── 01_create_tables.sql # Table definitions with constraints
-│ └── 02_insert_data.sql # Sample data inserts for products, customers, etc.
-│
-├── queries/
-│ ├── 01_basic_queries.sql # Simple queries for understanding the schema
-│ ├── 02_intermediate_queries.sql # Joins, aggregates, subqueries
-├── docs/
-│ └── ERD.png Entity Relationship Diagram of the schema
+│ | — 01_create_tables.sql # Table definitions with constraints
+│ | — 02_insert_data.sql # Sample data inserts for products, customers, etc.
+|
+| — queries/
+│ | — 01_basic_queries.sql # Simple queries for understanding the schema
+│ | — 02_intermediate_queries.sql # Joins, aggregates, subqueries
+| — docs/
+│ |— ERD.png Entity Relationship Diagram of the schema
 └── README.md # Project documentation
 
 ---

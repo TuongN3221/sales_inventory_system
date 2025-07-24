@@ -1,63 +1,64 @@
--- 1. What is the total revenue generated per product category?
+-- 1. Retrieve the name, category, and quantity in stock for each product from the products table.
 SELECT 
-	Products.Category, 
-	SUM(Sales.TotalAmount) AS TotalAmount
+	Name, 
+    Category, 
+    QuantityInStock
 FROM 
-	Sales Sales
-JOIN 
-	products Products ON Sales.ProductID = Products.ProductID
-GROUP BY 
-	Products.Category;
+	products;
 
--- 2. How many unique products has each customer purchased?
+-- 2. Display the first name, last name, and email of customers who are from the "West" region.
 SELECT 
-	Sales.CustomerID, 
-    Customers.FirstName, 
-    Customers.LastName, 
-    COUNT(DISTINCT Sales.ProductID) AS UniquePurchase
+	FirstName, 
+    LastName
 FROM 
-	Sales Sales
-JOIN 
-	Customers Customers ON Sales.CustomerID = Customers.CustomerID
-GROUP BY 
-	Sales.CustomerID, 
-    Customers.FirstName, 
-    Customers.LastName;
+	customers
+WHERE 
+	Region = 'West';
 
--- 3. For each product, what is the average quantity sold per transaction?
+-- 3. For each product, display the product ID and the total quantity sold across all sales.
 SELECT 
-	Products.ProductID, 
-    Products.Name, 
-    ROUND(AVG(Sales.QuantitySold), 2) AS Avg_Sold
+	ProductID, 
+	SUM(QuantitySold) AS QuantitySold
+FROM 
+	sales
+GROUP BY 
+	ProductID;
+
+-- 4. Retrieve the name of products (from products) that have at least one sale in the sales table.
+SELECT 
+	Products.Name
 FROM 
 	sales Sales
-JOIN 
-	Products Products ON Sales.ProductID = Products.ProductID
-GROUP BY 
-	Products.ProductID;
+INNER JOIN 
+	products Products ON Sales.ProductID = Products.ProductID;
 
--- 4.  Which regions generate the most revenue?
-Select 
-	Customers.Region, 
-    SUM(Sales.TotalAmount) AS TotalRevenue
-FROM 
-	sales Sales
-JOIN 
-	Customers Customers ON Sales.CustomerID = Customers.CustomerID
-GROUP BY 
-	Customers.Region
-ORDER BY 
-	TotalRevenue DESC;
-
--- 5. What are the top 3 product categories by number of units sold?
+-- 5. List the first and last names of customers who have purchased the product 'MacBook Pro 16"'.
 SELECT 
-	Products.Category, 
-    SUM(Sales.QuantitySold) AS QuantitySold
+	Customers.FirstName, 
+    Customers.LastName
 FROM 
-	sales Sales
+	customers Customers
 JOIN 
-	products Products on Sales.ProductID = Products.ProductID
-GROUP BY 
-	Products.Category;
+	sales Sales ON Customers.CustomerID = Sales.CustomerID
+JOIN 
+	roducts Products ON Sales.ProductID = Products.ProductID
+WHERE 
+	Products.Name = 'MacBook Pro 16"';
 
--- End of 02_basic_queries.
+-- 6. Count how many customers are there in each region.
+SELECT 
+	Region, 
+	COUNT(Region) AS TotalCustomers
+FROM 
+	customers
+GROUP BY 
+	Region;
+
+-- 7. Show each product name and the total revenue it has generated from sales.
+SELECT 
+	Products.Name, 
+    Sales.QuantitySold * Products.Price AS TotalSales
+FROM 
+	products Products
+JOIN 
+	sales Sales ON Products.ProductID = Sales.ProductID;
